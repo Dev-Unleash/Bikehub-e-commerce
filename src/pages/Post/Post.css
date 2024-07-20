@@ -1,0 +1,79 @@
+.Post-Container{
+    width: 90%;
+    height: 80vh;
+    min-height: 80vh;
+    background: whitesmoke;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /* backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px ); */
+    border-radius: 40px;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
+    position: absolute;
+    /* margin-top: 200px; */
+    /* margin-bottom: 30px; */
+    /* position: fixed; */
+}
+.Post-Form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+
+    & img{
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+    }
+
+    & input{
+        width: 80%;
+        height: 30px;
+        border: solid 2px blue;
+        border-radius: 10px;
+        outline: none;
+        padding: 2px;
+    }
+    & input[type="file"]{
+        display: none;
+    }
+    & label{
+        width: 80px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        transition: 350ms;
+        font-size: 10px;
+    }
+    & label:hover{
+        background-color: blue;
+        /* transition: 350ms; */
+        border: 2px solid white;
+        cursor: pointer;
+    }
+    & button{
+        width: 100px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        transition: 350ms;
+    }
+    & button:hover{
+        background-color:blue;
+        /* transition: 350ms; */
+        border: 2px solid white;
+        cursor: pointer;
+    }
+}

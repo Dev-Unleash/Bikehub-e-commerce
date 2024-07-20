@@ -1,0 +1,140 @@
+.Header-Container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+}
+.Header-Logo {
+    display: flex;
+    gap: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+.Header-Logo-Item{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color:grey;
+    border: 2px solid white;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(5, 5, 57);
+    padding: 5px;
+    font-size: 37px;
+}
+.Header-Navs{
+    display: flex;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
+.Header-Navs a{
+    text-decoration: none;
+}
+.search {
+    width: 250px;
+    height: 35px;
+    border-radius: 30px;
+    font-size: 17px;
+    padding-inline: 8px;
+    overflow: hidden;
+    outline: none;
+    border: 1px solid rgb(10, 10, 55);
+}
+.searchIcon {
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(10, 10, 55);
+}
+.Header-Cart{
+    display: flex;
+    gap: 20px;
+    font-size: 40px;
+    font-weight: 700;
+
+    & a{
+        position: relative;
+        color: black;
+
+        & div{
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+    }
+}
+.UserContainer{
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    border-left: 2px solid rgb(106, 106, 106);
+    position: relative;
+    
+    & .Icon {
+      cursor: pointer;
+      font-size: 30px;
+      color: black;
+    }
+
+    & .UserDropContainer {
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        height: max-content;
+        top: 55px;
+        left: 5px;
+        border-radius: 8px;
+        padding: 10px;
+        /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+    }
+ }
+.Header-Burger{
+    display: none;
+}
+
+@media screen and (width <= 555px) {
+    .Header-Navs{
+        display: none;
+    }
+    .Header-Cart{
+        display: none;
+        font-size: 20px;
+    }
+    .Header-Burger{
+        display: flex;
+    }
+    .Header-Logo {
+        font-size: 30px;
+    }
+    .Header-Logo-Item {
+        width: 40px;
+        height: 40px;
+    }
+    .UserContainer{
+        display: none;
+    }
+}
