@@ -15,12 +15,13 @@ const Checkout = () => {
             [e.target.name]: e.target.value,
         });
     };
+    const keys = `keys${Math.random()}`;
 
     const payKorapay = (e) => {
         e.preventDefault();  
         window.Korapay.initialize({
             key: "pk_test_wCLZPjiCUMhP79MFoGiDGVgEgzkBBrAoPMGiwjh5",
-            reference: "your-unique-reference",
+            reference: keys,
             amount: formData.amount * 100, 
             currency: "NGN",
             customer: {
@@ -62,7 +63,7 @@ const Checkout = () => {
                     onChange={handleChange}
                 />
                 <input
-                    type="number"
+                    type=""
                     name="amount"
                     placeholder="Amount"
                     required
