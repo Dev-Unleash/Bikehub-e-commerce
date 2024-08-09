@@ -12,6 +12,7 @@ import Cart from './pages/Cart/Cart';
 import Post from './pages/Post/Post';
 import AuthLayout from './components/AuthLayout/AuthLayout';
 import LoginAndSignUp from './components/Login&Signup/Login&SignUp';
+import CheckOut from './components/Checkout/Checkout'
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/post",
         element: <Post/>
+      },
+      {
+        path: "/CheckOut",
+        element: <CheckOut />
       }
     ]
   },

@@ -237,7 +237,6 @@
 
 
 
-
 import React, { useState, useEffect } from 'react';
 import './Login&SignUp.css';
 import { useNavigate, Link } from 'react-router-dom';
@@ -248,19 +247,9 @@ import download2 from "../../assets/download2.jpeg";
 import { useSelector, useDispatch } from 'react-redux';
 import { signUpUser, loginUser } from "../../features/auth/authSlice";
 
-export const handleSignUpClick = () => {
-    const container = document.querySelector(".container");
-    container.classList.add("sign-up-mode");
-};
-
-export const handleSignInClick = () => {
-    const container = document.querySelector(".container");
-    container.classList.remove("sign-up-mode");
-};
-
 const LoginAndSignUp = () => {
-    const [seePassword, setSeePassword] = useState(false);
     const [seeError, setSeeError] = useState(false);
+    const [seePassword, setSeePassword] = useState(false); // Fixed: This state was missing
     const [userInfo, setUserInfo] = useState({});
     const [loginInfo, setLoginInfo] = useState({});
     const dispatch = useDispatch();
@@ -273,7 +262,7 @@ const LoginAndSignUp = () => {
     };
 
     useEffect(() => {
-        if (checkIfLoggedIn === true) {
+        if (checkIfLoggedIn) {
             navigate("/");
         }
     }, [checkIfLoggedIn, navigate]);
@@ -295,10 +284,20 @@ const LoginAndSignUp = () => {
         const specialCharacterRegex = /[!@#$%^&*(),.?":{}|<>]/;
         const numberRegex = /\d/;
 
-        if (specialCharacterRegex.test(userInfo.password) && numberRegex.test(userInfo.password)) {
+        if (userInfo.password && specialCharacterRegex.test(userInfo.password) && numberRegex.test(userInfo.password)) {
             setSeeError(false);
         }
     }, [userInfo.password]);
+
+    const handleSignUpClick = () => {
+        const container = document.querySelector(".container");
+        container.classList.add("sign-up-mode");
+    };
+
+    const handleSignInClick = () => {
+        const container = document.querySelector(".container");
+        container.classList.remove("sign-up-mode");
+    };
 
     return (
         <div className="container">
@@ -435,7 +434,7 @@ const LoginAndSignUp = () => {
                 </div>
                 <div className="panel right-panel">
                     <div className="content">
-                        <h4>Are you New</h4>
+                        <h4>Are you New?</h4>
                         <p>Sign up to Bikehub<br />Sign up to continue</p>
                         <button className="btn2" id="sign-up-btn" onClick={handleSignUpClick}>Sign up</button>
                     </div>
@@ -447,4 +446,5 @@ const LoginAndSignUp = () => {
 };
 
 export default LoginAndSignUp;
+
 

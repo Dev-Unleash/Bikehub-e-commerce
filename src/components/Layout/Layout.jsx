@@ -14,7 +14,7 @@ const Layout = () => {
         <div className='App-Items'>
           <Outlet />
         </div>
-        <Footer />
+       {location.pathname === '/' && <Footer />}
       </section>
     </div>
   )

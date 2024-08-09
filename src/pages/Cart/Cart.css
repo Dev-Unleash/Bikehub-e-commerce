@@ -11,7 +11,7 @@
     padding-bottom: 20px;
     overflow-y: hidden;
     position: fixed;
-    position: absolute;
+    /* position: absolute; */
     /* margin-top: 200px; */
 }
 

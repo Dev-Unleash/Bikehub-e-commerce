@@ -14,7 +14,7 @@
     position: absolute;
     /* margin-top: 200px; */
     /* margin-bottom: 30px; */
-    /* position: fixed; */
+    position: fixed;
 }
 .Post-Form{
     width: 50%;
